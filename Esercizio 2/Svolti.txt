@@ -1,0 +1,71 @@
+1)
+SELECT YEAR(enrolment_date) AS year, COUNT(*) AS num_enrolments
+FROM 'students'
+GROUP BY YEAR(enrolment_date)
+ORDER BY 'year';
+
+
+2)
+SELECT 'office_address', COUNT(*) AS num_teachers
+FROM 'teachers'
+GROUP BY 'office_address';
+
+
+
+3)
+SELECT 'exam_id', AVG('vote') AS average_vote
+FROM vote
+GROUP BY 'exam_id';
+
+
+
+4)
+SELECT 'department_id', COUNT(*) AS num_degrees
+FROM 'degrees'
+GROUP BY 'department_id';
+
+
+------------------------------------------------------------------------
+
+Query con JOIN
+
+
+1)
+SELECT *
+FROM 'students'
+JOIN degrees ON 'students' . 'degree_id' = degrees.id
+WHERE 'degrees.name' = 'Corso di Laurea in Economia';
+
+
+
+
+2)
+SELECT *
+FROM 'degrees'
+JOIN 'departments' ON 'degrees'.'department_id' = departments.id
+WHERE degrees.level = 'magistrale'
+AND departments.name = 'Dipartimento di Neuroscienze';
+
+
+
+3)
+SELECT *
+FROM 'courses'
+JOIN 'course_teacher' ON 'courses.id' = course_teacher.course_id
+WHERE 'course_teacher'.'teacher_id' = 44;
+
+
+
+4)
+Non ho trovato una soluzione :/
+
+
+
+5)
+Non ho trovato una soluzione :/
+
+
+6)
+Non ho trovato una soluzione :/
+
+
